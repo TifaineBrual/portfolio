@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(cd '/c/Users/lucie/.claude/projects/c--Users-lucie-Desktop-portfolio/240e7188-ce14-4a98-b8c3-73f6959dd445/tool-results/' && ls -la && file webfetch-1779817571920-d3b604.bin)",
+      "Read(//c/Users/lucie/.claude/projects/c--Users-lucie-Desktop-portfolio/240e7188-ce14-4a98-b8c3-73f6959dd445/tool-results//**)",
+      "Bash(mkdir -p extracted)",
+      "Bash(gunzip -c webfetch-1779817571920-d3b604.bin)",
+      "Bash(tar -tf extracted/out.tar)",
+      "Bash(tar -xf out.tar)"
+    ]
+  }
+}

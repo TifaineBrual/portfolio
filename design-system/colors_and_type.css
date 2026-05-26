@@ -1,0 +1,230 @@
+/* ============================================================
+   Meta Commerce Design System — Foundations
+   Color + Typography tokens, plus semantic element styles.
+   Optimistic VF is proprietary; substituted with Plus Jakarta Sans.
+   ============================================================ */
+
+/* Plus Jakarta Sans — closest Google Fonts match to Meta's Optimistic VF.
+   Loaded with the full weight range used across the system (300, 400, 500, 700). */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  /* ----------------------------------------------------------
+     COLORS
+     ---------------------------------------------------------- */
+
+  /* Brand & accent */
+  --color-primary:        #0064e0;  /* Cobalt — buy-now CTA only */
+  --color-primary-deep:   #0457cb;  /* Pressed cobalt, active links */
+  --color-primary-soft:   #0091ff;  /* Informational callout tint */
+  --color-on-primary:     #ffffff;
+  --color-fb-blue:        #1876f2;  /* Selected radio/checkbox */
+  --color-meta-link:      #385898;  /* Legacy nav + footer link */
+  --color-oculus-purple:  #a121ce;  /* Quest/VR category accent */
+
+  /* Ink button (marketing CTA) */
+  --color-ink-button:     #000000;
+  --color-on-ink-button:  #ffffff;
+
+  /* Semantic */
+  --color-success:        #31a24c;
+  --color-success-bg:     #24e400;
+  --color-attention:      #f2a918;
+  --color-warning:        #f7b928;
+  --color-warning-bg:     #ffe200;
+  --color-critical:       #e41e3f;
+  --color-critical-strong:#f0284a;
+
+  /* Surface */
+  --color-canvas:         #ffffff;
+  --color-surface-soft:   #f1f4f7;
+
+  /* Text */
+  --color-ink-deep:       #0a1317;
+  --color-ink:            #1c1e21;
+  --color-charcoal:       #444950;
+  --color-slate:          #4b4c4f;
+  --color-steel:          #5d6c7b;
+  --color-stone:          #8595a4;
+  --color-disabled-text:  #bcc0c4;
+
+  /* Hairlines */
+  --color-hairline:       #ced0d4;
+  --color-hairline-soft:  #dee3e9;
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY
+     ---------------------------------------------------------- */
+  --font-display: "Plus Jakarta Sans", "Optimistic VF", Montserrat, Helvetica, Arial, "Noto Sans", sans-serif;
+  --font-body:    "Plus Jakarta Sans", "Optimistic VF", Montserrat, Helvetica, Arial, "Noto Sans", sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Type scale — sizes */
+  --fs-hero-display: 64px;
+  --fs-display-lg:   48px;
+  --fs-heading-lg:   36px;
+  --fs-heading-md:   28px;
+  --fs-heading-sm:   24px;
+  --fs-subtitle-lg:  18px;
+  --fs-subtitle-md:  18px;
+  --fs-body-md:      16px;
+  --fs-body-sm:      14px;
+  --fs-caption:      12px;
+  --fs-button-md:    14px;
+  --fs-link-md:      16px;
+
+  /* Line heights */
+  --lh-hero:    1.16;
+  --lh-display: 1.17;
+  --lh-h-lg:    1.28;
+  --lh-h-md:    1.21;
+  --lh-h-sm:    1.25;
+  --lh-sub:     1.44;
+  --lh-body:    1.50;
+  --lh-body-sm: 1.43;
+  --lh-caption: 1.33;
+
+  /* Letter spacing */
+  --ls-body-md: -0.16px;
+  --ls-body-sm: -0.14px;
+
+  /* OpenType — paired stylistic sets used on every heading */
+  --ot-headings: "ss01" on, "ss02" on;
+
+  /* ----------------------------------------------------------
+     SPACING (4px base, 8px primary step)
+     ---------------------------------------------------------- */
+  --sp-xxs:        4px;
+  --sp-xs:         8px;
+  --sp-sm:        10px;
+  --sp-md:        12px;
+  --sp-base:      16px;
+  --sp-lg:        20px;
+  --sp-xl:        24px;
+  --sp-xxl:       32px;
+  --sp-xxxl:      40px;
+  --sp-section-sm:48px;
+  --sp-section:   64px;
+  --sp-section-lg:80px;
+  --sp-hero:     120px;
+
+  /* ----------------------------------------------------------
+     RADII
+     ---------------------------------------------------------- */
+  --r-xs:       2px;
+  --r-sm:       4px;
+  --r-md:       6px;
+  --r-lg:       8px;
+  --r-xl:      16px;
+  --r-xxl:     24px;
+  --r-xxxl:    32px;
+  --r-feature: 40px;
+  --r-full:   100px;
+  --r-circle: 9999px;
+
+  /* ----------------------------------------------------------
+     ELEVATION
+     ---------------------------------------------------------- */
+  --shadow-0: none;
+  --shadow-1: rgba(0, 0, 0, 0.2) 1px 1px 0px 0px;
+  --shadow-2: rgba(20, 22, 26, 0.3) 0px 1px 4px 0px;
+
+  /* Motion (extracted gap — see README) */
+  --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:    150ms;
+  --dur-base:    200ms;
+  --dur-slow:    300ms;
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT DEFAULTS
+   These set sensible base rules so plain HTML reads on-brand
+   without needing a class on every element.
+   ============================================================ */
+
+html, body {
+  background: var(--color-canvas);
+  color: var(--color-ink-deep);
+  font-family: var(--font-body);
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body-md);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-feature-settings: var(--ot-headings);
+  color: var(--color-ink-deep);
+  margin: 0;
+}
+
+h1 { font-size: var(--fs-hero-display); font-weight: 500; line-height: var(--lh-hero); }
+h2 { font-size: var(--fs-display-lg);   font-weight: 500; line-height: var(--lh-display); }
+h3 { font-size: var(--fs-heading-lg);   font-weight: 500; line-height: var(--lh-h-lg); }
+h4 { font-size: var(--fs-heading-md);   font-weight: 300; line-height: var(--lh-h-md); } /* editorial subhead */
+h5 { font-size: var(--fs-heading-sm);   font-weight: 500; line-height: var(--lh-h-sm); }
+h6 { font-size: var(--fs-subtitle-lg);  font-weight: 700; line-height: var(--lh-sub); }
+
+p {
+  margin: 0;
+  font-size: var(--fs-body-md);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body-md);
+  color: var(--color-ink);
+  text-wrap: pretty;
+}
+
+small, .t-caption {
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  color: var(--color-steel);
+}
+
+a {
+  color: var(--color-primary-deep);
+  text-decoration: none;
+  font-weight: 700;
+}
+a:hover { text-decoration: underline; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-hairline-soft);
+  margin: 0;
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* ============================================================
+   TYPE UTILITY CLASSES (named after design tokens)
+   ============================================================ */
+.t-hero-display { font: 500 var(--fs-hero-display)/var(--lh-hero) var(--font-display); font-feature-settings: var(--ot-headings); }
+.t-display-lg  { font: 500 var(--fs-display-lg)/var(--lh-display) var(--font-display); font-feature-settings: var(--ot-headings); }
+.t-heading-lg  { font: 500 var(--fs-heading-lg)/var(--lh-h-lg)   var(--font-display); font-feature-settings: var(--ot-headings); }
+.t-heading-md  { font: 300 var(--fs-heading-md)/var(--lh-h-md)   var(--font-display); font-feature-settings: var(--ot-headings); }
+.t-heading-sm  { font: 500 var(--fs-heading-sm)/var(--lh-h-sm)   var(--font-display); font-feature-settings: var(--ot-headings); }
+.t-subtitle-lg { font: 700 var(--fs-subtitle-lg)/var(--lh-sub)   var(--font-body); }
+.t-subtitle-md { font: 400 var(--fs-subtitle-md)/var(--lh-sub)   var(--font-body); }
+.t-body-md       { font: 400 var(--fs-body-md)/var(--lh-body)    var(--font-body); letter-spacing: var(--ls-body-md); }
+.t-body-md-bold  { font: 700 var(--fs-body-md)/var(--lh-body)    var(--font-body); letter-spacing: var(--ls-body-md); }
+.t-body-sm       { font: 400 var(--fs-body-sm)/var(--lh-body-sm) var(--font-body); letter-spacing: var(--ls-body-sm); }
+.t-body-sm-bold  { font: 700 var(--fs-body-sm)/var(--lh-body-sm) var(--font-body); letter-spacing: var(--ls-body-sm); }
+.t-caption       { font: 400 var(--fs-caption)/var(--lh-caption) var(--font-body); }
+.t-caption-bold  { font: 700 var(--fs-caption)/var(--lh-caption) var(--font-body); }
+.t-button        { font: 700 var(--fs-button-md)/var(--lh-body-sm) var(--font-body); letter-spacing: var(--ls-body-sm); }
+.t-link          { font: 700 var(--fs-link-md)/var(--lh-body) var(--font-body); letter-spacing: var(--ls-body-md); }
+
+/* Ink color helpers */
+.ink-deep  { color: var(--color-ink-deep); }
+.ink       { color: var(--color-ink); }
+.charcoal  { color: var(--color-charcoal); }
+.slate     { color: var(--color-slate); }
+.steel     { color: var(--color-steel); }
+.stone     { color: var(--color-stone); }
+.on-canvas { color: var(--color-canvas); }

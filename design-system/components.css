@@ -1,0 +1,335 @@
+/* ============================================================
+   Meta Commerce Design System — Components
+   Buttons, cards, inputs, badges, nav. Mirrors the tokens in
+   colors_and_type.css. No hover states (per system policy).
+   ============================================================ */
+
+/* ============================================================
+   BUTTONS — always pill-shaped (--r-full)
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: var(--fs-button-md);
+  font-weight: 700;
+  line-height: var(--lh-body-sm);
+  letter-spacing: var(--ls-body-sm);
+  border-radius: var(--r-full);
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--dur-base) var(--ease-out),
+              color var(--dur-base) var(--ease-out),
+              border-color var(--dur-base) var(--ease-out);
+  user-select: none;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--color-fb-blue);
+  outline-offset: 2px;
+}
+
+/* Marketing primary — black pill */
+.btn-primary {
+  background: var(--color-ink-button);
+  color: var(--color-on-ink-button);
+  padding: 14px 30px;
+}
+.btn-primary:active,
+.btn-primary.is-pressed { background: var(--color-charcoal, #444950); }
+.btn-primary:disabled,
+.btn-primary[aria-disabled="true"] {
+  background: var(--color-disabled-text);
+  color: var(--color-canvas);
+  cursor: not-allowed;
+}
+
+/* Commerce primary — cobalt pill (buy-now flow ONLY) */
+.btn-buy {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  padding: 14px 30px;
+}
+.btn-buy:active,
+.btn-buy.is-pressed { background: var(--color-primary-deep); }
+
+/* Secondary — outlined ghost (dual-CTA pair) */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-ink-deep);
+  padding: 12px 28px;
+  border: 2px solid var(--color-ink-deep);
+}
+
+/* Ghost — quieter tertiary CTA */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-ink-deep);
+  padding: 10px 22px;
+  border: 2px solid rgba(10, 19, 23, 0.12);
+}
+
+/* Pill tab — category nav chip */
+.btn-pill-tab {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline);
+  padding: 8px 16px;
+}
+.btn-pill-tab.is-active,
+.btn-pill-tab[aria-current="page"] {
+  background: var(--color-ink-deep);
+  color: var(--color-canvas);
+  border-color: var(--color-ink-deep);
+}
+
+/* Icon circular — 40px utility */
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-circle);
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  border: 1px solid var(--color-hairline-soft);
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   CARDS & SURFACES
+   ============================================================ */
+.card-product-feature {
+  background: var(--color-canvas);
+  border-radius: var(--r-xxxl);
+  padding: var(--sp-xxl);
+  border: 1px solid var(--color-hairline-soft);
+}
+
+.card-feature-photo {
+  background: var(--color-canvas);
+  border-radius: var(--r-xxxl);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-promo-strip {
+  background: var(--color-ink-deep);
+  color: var(--color-canvas);
+  border-radius: var(--r-xxxl);
+  padding: var(--sp-section);
+}
+.card-promo-strip h2,
+.card-promo-strip h3,
+.card-promo-strip h4 { color: var(--color-canvas); }
+
+.card-icon-feature {
+  background: var(--color-canvas);
+  border-radius: var(--r-xl);
+  padding: var(--sp-xl);
+  border: 1px solid var(--color-hairline-soft);
+}
+
+.card-checkout-summary {
+  background: var(--color-canvas);
+  border-radius: var(--r-xl);
+  padding: var(--sp-xl);
+  border: 1px solid var(--color-hairline-soft);
+  box-shadow: var(--shadow-2);
+}
+
+.product-thumbnail {
+  background: var(--color-surface-soft);
+  border-radius: var(--r-xl);
+  padding: var(--sp-base);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.warranty-card {
+  background: var(--color-surface-soft);
+  border-radius: var(--r-xxl);
+  padding: var(--sp-xxl);
+}
+
+.why-buy-tile {
+  background: var(--color-canvas);
+  border-radius: var(--r-xl);
+  padding: var(--sp-xxl) var(--sp-xl);
+  border: 1px solid var(--color-hairline-soft);
+}
+
+.faq-accordion-item {
+  background: var(--color-canvas);
+  border-radius: var(--r-xl);
+  padding: var(--sp-xl);
+  border: 1px solid var(--color-hairline-soft);
+}
+
+/* ============================================================
+   FORMS & INPUTS
+   ============================================================ */
+.text-input {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font: 400 var(--fs-body-md)/var(--lh-body) var(--font-body);
+  letter-spacing: var(--ls-body-md);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--r-lg);
+  padding: var(--sp-md);
+  height: 44px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color var(--dur-base) var(--ease-out);
+}
+.text-input:focus,
+.text-input.is-focused {
+  outline: none;
+  border: 2px solid var(--color-fb-blue);
+  padding: calc(var(--sp-md) - 1px);
+}
+.text-input.is-error,
+.text-input[aria-invalid="true"] {
+  border: 1px solid var(--color-critical-strong);
+}
+.text-input::placeholder { color: var(--color-stone); }
+
+.search-pill {
+  background: var(--color-surface-soft);
+  color: var(--color-steel);
+  font: 400 var(--fs-body-sm)/var(--lh-body-sm) var(--font-body);
+  letter-spacing: var(--ls-body-sm);
+  border: 0;
+  border-radius: var(--r-full);
+  padding: 0 var(--sp-lg);
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.radio-option {
+  background: var(--color-canvas);
+  border-radius: var(--r-lg);
+  padding: var(--sp-lg);
+  border: 1px solid rgba(10, 19, 23, 0.12);
+  cursor: pointer;
+  display: block;
+  transition: border-color var(--dur-base) var(--ease-out);
+}
+.radio-option.is-selected,
+.radio-option[aria-checked="true"] {
+  border: 2px solid #0143b5; /* deep cobalt - radio selection */
+  padding: calc(var(--sp-lg) - 1px);
+}
+
+.color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-circle);
+  border: 2px solid var(--color-canvas);
+  display: inline-block;
+  box-shadow: 0 0 0 1px var(--color-hairline);
+  cursor: pointer;
+}
+.color-swatch.is-selected {
+  box-shadow: 0 0 0 2px var(--color-ink-deep);
+}
+
+/* ============================================================
+   BADGES
+   ============================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  font: 700 var(--fs-caption)/var(--lh-caption) var(--font-body);
+  border-radius: var(--r-full);
+  padding: 4px 10px;
+}
+.badge-promo    { background: var(--color-warning);  color: var(--color-ink-deep); }
+.badge-attention{ background: var(--color-attention);color: var(--color-canvas);   }
+.badge-success  { background: var(--color-success);  color: var(--color-canvas);   }
+.badge-critical { background: var(--color-critical); color: var(--color-canvas);   }
+
+/* ============================================================
+   PROMO BANNER (above-nav strip)
+   ============================================================ */
+.promo-banner {
+  background: var(--color-ink-deep);
+  color: var(--color-canvas);
+  font: 700 var(--fs-body-sm)/var(--lh-body-sm) var(--font-body);
+  letter-spacing: var(--ls-body-sm);
+  padding: var(--sp-md) var(--sp-xl);
+  text-align: center;
+}
+.promo-banner.is-yellow {
+  background: var(--color-warning);
+  color: var(--color-ink-deep);
+}
+.promo-banner a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.topnav {
+  background: var(--color-canvas);
+  border-bottom: 1px solid var(--color-hairline-soft);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--sp-xxl);
+  gap: var(--sp-xl);
+}
+.topnav .logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: var(--color-ink-deep);
+}
+.topnav .pill-tabs {
+  display: flex;
+  gap: var(--sp-xs);
+  flex: 1;
+  justify-content: center;
+}
+.topnav .nav-utils {
+  display: flex;
+  gap: var(--sp-xs);
+  align-items: center;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font: 400 var(--fs-body-sm)/var(--lh-body-sm) var(--font-body);
+  letter-spacing: var(--ls-body-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-steel);
+}
+.breadcrumb .sep { color: var(--color-stone); }
+.breadcrumb .leaf { color: var(--color-ink); }
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--sp-xxl);
+}
+.stack { display: flex; flex-direction: column; }
+.row   { display: flex; flex-direction: row;    }
+.grid  { display: grid; }
