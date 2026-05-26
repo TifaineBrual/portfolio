@@ -7,7 +7,13 @@
       "Bash(mkdir -p extracted)",
       "Bash(gunzip -c webfetch-1779817571920-d3b604.bin)",
       "Bash(tar -tf extracted/out.tar)",
-      "Bash(tar -xf out.tar)"
+      "Bash(tar -xf out.tar)",
+      "Bash(git -C 'c:/Users/lucie/Desktop/portfolio' remote -v)",
+      "Bash(git -C 'c:/Users/lucie/Desktop/portfolio' status)",
+      "Bash(git -C 'c:/Users/lucie/Desktop/portfolio' branch)",
+      "Bash(git -C 'c:/Users/lucie/Desktop/portfolio' status --ignored)",
+      "Bash(git -C 'c:/Users/lucie/Desktop/portfolio' ls-files)",
+      "Bash(git -C 'c:/Users/lucie/Desktop/portfolio' log --oneline)"
     ]
   }
 }
